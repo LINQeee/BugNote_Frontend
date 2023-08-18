@@ -1,0 +1,52 @@
+aside {
+    background: #FBF8FF;
+    border-radius: 0 30px 30px 0;
+    height: 100%;
+    width: 234px;
+}
+
+aside .logo {
+    font-size: 60px;
+    width: 100%;
+    height: 16%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+aside .plates {
+    margin-top: 40px;
+}
+
+.plate {
+    height: 51px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-left: 0 solid #8F58FF;
+     gap: 20px;
+    transition: all 0.15s;
+    box-sizing: border-box;
+    padding-left: 15%;
+    cursor:pointer;
+}
+
+.plate span {
+    font-weight: 300;
+    color: #8F58FF;
+    font-size: 20px;
+}
+
+.plate i {
+    scale: 1.3;
+}
+
+.plate:hover {
+    border-left-width: 7px;
+}
+
+.plates .active {
+    border-left-width: 7px;
+    background: linear-gradient(90deg, #8F58FF 0%, rgba(143, 88, 255, 0.10) 0.01%, rgba(217, 217, 217, 0.00) 100%);
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BugNote</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../v6.4.0/css/all.css">
+    <link rel="stylesheet" href="../dashboardStyles/styles.css">
+    <link rel="stylesheet" href="../dashboardStyles/asideStyles.css">
+    <link rel="stylesheet" href="../dashboardStyles/mainBoxStyles.css">
+    <link rel="stylesheet" href="../dashboardStyles/headerStyles.css">
+    <link rel="stylesheet" href="../dashboardStyles/folderPanelStyles.css">
+    <link rel="stylesheet" href="../dashboardStyles/dropDownStyles.css">
+    <link rel="stylesheet" href="../dashboardStyles/tablePanelStyles.css">
+</head>
+<body>
+<aside>
+    <span class="logo">Logo</span>
+    <div class="plates">
+        <div class="plate active">
+            <i class="fa-duotone fa-grid-2"
+               style="--fa-primary-color: rgba(143, 88, 255, 1); --fa-secondary-color: rgba(143, 88, 255, 0.8);"></i>
+            <span>Dashboard</span>
+        </div>
+        <div class="plate">
+            <i class="fa-solid fa-chart-simple" style="color: #8F58FF"></i>
+            <span>Stats</span>
+        </div>
+        <div class="plate">
+            <i class="fa-solid fa-gear" style="color: #8F58FF"></i>
+            <span>Settings</span>
+        </div>
+    </div>
+</aside>
+<main>
+    <header>
+        <button id="notificationButton"><i class="fa-solid fa-envelope"></i></button>
+        <button id="userButton"><i class="fa-solid fa-user"></i></button>
+    </header>
+    <div class="mainBox">
+
+        <section class="folderBox">
+            <span class="sectionHeader">Let's create a folder</span>
+            <div class="folderPanel">
+                <div class="mainInput">
+                    <input type="text" id="" placeholder="Folder name" required>
+                    <select class="dropdown" id="folderType" required placeholder="Pick a folder type">
+                        <option value="private">Private</option>
+                        <option value="public">Public</option>
+                    </select>
+                </div>
+                <div class="partnerInput">
+                    <span>Add users</span>
+                    <input type="text" id="userInput" autocomplete="off" disabled="disabled" required
+                           placeholder="Username" oninput="onUserInput()">
+                    <ul class="folderUsers empty" id="usersList">
+                        <li data-user-id="" style="display: none">
+                            <div class="userCard">
+                                <div class="userData">
+                                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar"
+                                         class="avatar">
+                                    <span class="username">Joseph</span>
+                                </div>
+                                <button class="remove">remove</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="folderUsers userSuggestions" id="suggestList">
+                        <li data-user-id="" style="display: none">
+                            <div class="userCard">
+                                <div class="userData">
+                                    <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="avatar"
+                                         class="avatar">
+                                    <span class="username">Stacy</span>
+                                </div>
+                                <button class="add" onclick="addUser(this)">add</button>
+                            </div>
+                        </li>
+                        <li class="notFound"><span><i
+                                class="fa-solid fa-circle-exclamation"></i>   No users found</span></li>
+                    </ul>
+                </div>
+                <button class="createButton">Create</button>
+            </div>
+        </section>
+        <section class="folderTable">
+            <span class="sectionHeader">Here is your folders</span>
+            <div class="tablePanel">
+                <table class="scrollable">
+                    <thead>
+                    <tr>
+                        <th>NAME</th>
+                        <th>TYPE</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><span>my_dev_command_group</span></td>
+                        <td><span>public</span></td>
+                        <td><i class="fa-regular fa-pen-to-square"></i></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script src="logic.js"></script>
+<script src="dropDownLogic.js"></script>
+<script src="utils.js"></script>
+<script src="apiLogic.js"></script>
+</body>
+</html>

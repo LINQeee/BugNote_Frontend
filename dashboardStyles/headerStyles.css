@@ -1,0 +1,27 @@
+header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+header button i {
+    scale: 1.7;
+    color: #8F58FF;
+}
+
+#notificationButton {
+    scale: 1.3;
+}
+
+#userButton i {
+    background: #FBF8FF;
+    box-sizing: border-box;
+    padding: 7px;
+    border-radius: 50%;
+}
